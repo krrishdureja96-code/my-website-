@@ -365,7 +365,7 @@ video{
 }
 
 
-/*
+
 @media(max-width:940px){
     .grid-container{
         grid-template-columns: 1fr;
@@ -414,7 +414,7 @@ video{
         width: 100%;
     }
 
-}*/
+}
 
 @media(max-width:960px) {
     

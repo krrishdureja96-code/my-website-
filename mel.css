@@ -682,3 +682,40 @@ body.enterscreen-blur .grid-container {
 .txt{
     color: aliceblue;
 }
+@media (max-width: 768px) {
+    .content {
+        grid-template-columns: 1fr;
+        padding: 20px 10px;
+        gap: 15px;
+    }
+    .content-box {
+        margin-top: 10vh; /* Smaller top margin */
+        max-width: 100%;
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .bg-text {
+        margin-left: 5vw; /* Responsive margin */
+        margin-top: 20px;
+        padding: 5px 10px;
+        max-width: 90vw;
+        font-size: 16px; /* Readable on small screens */
+    }
+    .content h2, .content li, .content h3 {
+        font-size: 18px; /* Adjust text for mobile */
+    }
+}
+
+body, html {
+    font-family: 'Edu AU VIC WA NT Dots', cursive;
+    font-optical-sizing: auto;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow-x: hidden; /* Prevents horizontal scroll */
+    background-color: rgba(0,0,0,0.4);
+}
+.grid-container{
+    margin-left: 12px;
+}

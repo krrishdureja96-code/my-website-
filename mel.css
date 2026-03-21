@@ -682,40 +682,73 @@ body.enterscreen-blur .grid-container {
 .txt{
     color: aliceblue;
 }
-@media (max-width: 768px) {
+@media (max-width: 360px) and (max-height: 780px) {
+    body {
+        font-size: 14px; 
+    }
     .content {
         grid-template-columns: 1fr;
-        padding: 20px 10px;
-        gap: 15px;
+        padding: 15px 8px; 
+        gap: 12px;
+        margin: 0;
     }
     .content-box {
-        margin-top: 10vh; /* Smaller top margin */
+        margin-top: 5vh; 
+        padding: 20px 15px;
         max-width: 100%;
         width: 100%;
-        margin-left: 0;
-        margin-right: 0;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        max-height: none; 
     }
     .bg-text {
-        margin-left: 5vw; /* Responsive margin */
-        margin-top: 20px;
-        padding: 5px 10px;
+        margin: 10px 5vw 20px; 
+        padding: 8px 12px;
+        font-size: 14px;
         max-width: 90vw;
-        font-size: 16px; /* Readable on small screens */
+        text-align: center;
     }
-    .content h2, .content li, .content h3 {
-        font-size: 18px; /* Adjust text for mobile */
+    .content h2, .content h3 {
+        font-size: 16px;
+    }
+    .content li {
+        font-size: 15px;
+        margin-bottom: 5px;
+    }
+    .img {
+        max-width: 100%;
+        height: auto;
+    }
+    iframe {
+        width: 100% !important;
+        max-height: 200px !important;
+        height: 200px !important;
+    }
+    .discord-card, .about-me, .songs {
+        position: static !important; /
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    .status-container {
+        flex-direction: column; 
+        gap: 10px;
+        padding: 15px;
+    }
+    .comment-input, button {
+        font-size: 14px;
+        padding: 10px;
     }
 }
 
-body, html {
-    font-family: 'Edu AU VIC WA NT Dots', cursive;
-    font-optical-sizing: auto;
-    margin: 0;
-    padding: 0;
+.content-box {
+    box-sizing: border-box; 
+    overflow: hidden; 
+}
+
+.box {
+    width: 100vw; 
     height: 100vh;
-    overflow-x: hidden; /* Prevents horizontal scroll */
-    background-color: rgba(0,0,0,0.4);
 }
-.grid-container{
-    margin-left: 12px;
-}
+
+

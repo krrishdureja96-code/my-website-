@@ -632,31 +632,46 @@ body.enterscreen-blur .grid-container {
     color: aliceblue;
 }
 @media (max-width: 400px) {
-    * {
-        max-width: 100% !important;
+    * { 
+        max-width: 100% !important; 
+        box-sizing: border-box !important;
     }
     
     html, body {
         margin: 0 !important;
         padding: 0 !important;
+        width: 100% !important;
         overflow-x: hidden !important;
+        overflow-y: auto !important;
     }
     
     .grid-container {
-        grid-template-columns: 1fr !important;
-        width: 100% !important;
-        max-width: 344px !important;  /* 360px - 16px total padding */
-        margin: 0 auto !important;
-        padding: 80px 8px 120px 8px !important;
+        width: 100vw !important;
+        margin: 0 !important;
+        padding: 80px 0px 120px 0px !important;  /* ZERO side padding */
         gap: 20px !important;
-        box-sizing: border-box !important;
+        grid-template-columns: 1fr !important;
+        top: 0 !important;
+        position: relative !important;
+        left: 0 !important;
     }
     
     .box {
-        width: 100% !important;
-        max-width: 100% !important;
+        width: 100vw !important;
         margin: 0 !important;
-        padding: 20px 10px !important;  /* Even tighter */
-        box-sizing: border-box !important;
+        padding: 25px 16px !important;  /* 16px each side = 360-32=328px content */
+        max-width: 360px !important;
+        position: relative !important;
+    }
+    
+    /* Kill ALL positioning */
+    * [class*="about"], * [class*="bg"], .stuff, .dot, 
+    .connections, .avatar-decoration {
+        position: static !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        top: 0 !important;
+        transform: none !important;
     }
 }

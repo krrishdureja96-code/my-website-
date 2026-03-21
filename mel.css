@@ -414,6 +414,18 @@ video{
      position: relative;
      font-size: min(1.2rem,2.9vw);
     }
+
+    .grid-container, .box {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        left: 0 !important;
+        position: static !important;
+    }
+    /* your existing code continues... */
+
 }  
 /*
 @media(max-width:950px) {
@@ -630,18 +642,4 @@ body.enterscreen-blur .grid-container {
 }
 .txt{
     color: aliceblue;
-}
-@media(max-width:960px) {
-    .grid-container {
-        grid-template-columns: 1fr !important;
-        width: 100% !important;        /* ← ADD THIS LINE */
-        max-width: 100% !important;    /* ← ADD THIS LINE */
-        margin: 0 !important;          /* ← ADD THIS LINE */
-        /* Keep everything else the same */
-    }
-    
-    body {
-        overflow-x: hidden !important; /* ← CHANGE THIS LINE (add !important) */
-        /* Keep rest as-is */
-    }
 }

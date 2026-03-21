@@ -365,57 +365,6 @@ video{
 }
 
 
-
-@media(max-width:940px){
-    .grid-container{
-        grid-template-columns: 1fr;
-        grid-template-areas: 
-        "box-1"
-        "box-1"
-        "box-2"
-        "box-3"
-        "box-4"
-        "box-5";
-        top: auto;
-        bottom: auto;
-
-    }
-    .icons{
-        
-    }
-
-    body{
-    background-position: center;
-    background-size: cover;    
-    background-image: url(86.jpg);
-    overflow:scroll;
-    height: fit-content;
-    width: 1fr;
-    background-size: cover;
-    padding: 0;
-    }
-
-    .about-me{
-        display: flex;
-        flex-direction: column;
-        height: fit-content;
-
-    }
-    .about-me-txt{
-    position: relative;
-}
-
-.stuff{
-    position: relative;
-    }
-
-    .fav-shows{
-        height: 300px;
-        width: 100%;
-    }
-
-}
-
 @media(max-width:960px) {
     
      .grid-container{

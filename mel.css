@@ -632,47 +632,24 @@ body.enterscreen-blur .grid-container {
     color: aliceblue;
 }
 @media (max-width: 400px) {
-    /* Keep everything from previous block EXCEPT replace this part: */
-    
-    /* PRESERVE About Me - just fix positioning */
-    .about-me, .about-me-txt, .stuff, .aboutme-img {
-        display: flex !important;
-        position: relative !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        height: auto !important;
-        width: 100% !important;
+    html, body {
         margin: 0 !important;
-        bottom: 0 !important;
-        left: 0 !important;
+        padding: 0 !important;
+        width: 100vw !important;
+        overflow-x: hidden !important;
     }
     
-    .about-me {
-        flex-direction: column !important;
-        align-items: center !important;
-        gap: 15px !important;
-        padding: 25px !important;
-        justify-content: center !important;
+    .grid-container {
+        grid-template-columns: 1fr !important;
+        width: 100vw !important;
+        padding: 80px 12px 120px !important;
+        gap: 20px !important;
+        top: 0 !important;
     }
     
-    .about-me-txt {
-        font-size: 1.3rem !important;
-        text-align: center !important;
-        order: 3 !important; /* Title after image */
+    .box {
+        width: 100% !important;
+        height: auto !important;
+        min-height: 250px !important;
     }
-    
-    .stuff {
-        font-size: 1rem !important;
-        text-align: center !important;
-        order: 4 !important; /* Text after title */
-        flex-wrap: wrap !important;
-        justify-content: center !important;
-    }
-    
-    .aboutme-img {
-        order: 1 !important; /* Image first */
-        width: 80px !important;
-        height: 80px !important;
-    }
-}
-        
+}       

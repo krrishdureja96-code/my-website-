@@ -631,32 +631,3 @@ body.enterscreen-blur .grid-container {
 .txt{
     color: aliceblue;
 }
-@media screen and (max-width: 400px) and (max-height: 780px) {
-    html { overflow-x: hidden !important; }
-    body { 
-        width: 100% !important; 
-        margin: 0 !important; 
-        padding: 0 !important;
-        display: block !important;
-    }
-    .grid-container { 
-        grid-template-columns: 1fr !important;
-        width: 100vw !important;
-        max-width: 360px !important;
-        margin: 0 !important;
-        padding: 60px 0 100px 0 !important;
-        position: static !important;
-    }
-    .box { 
-        width: 100% !important; 
-        max-width: 100% !important;
-        margin: 0 !important;
-        padding: 20px 12px !important;
-        position: relative !important;
-        left: 0 !important;
-    }
-    *, *:before, *:after {
-        max-width: 100% !important;
-        position: static !important;
-    }
-}

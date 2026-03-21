@@ -639,17 +639,15 @@ body.enterscreen-blur .grid-container {
     html, body {
         margin: 0 !important;
         padding: 0 !important;
-        width: 100% !important;
-        max-width: 100% !important;
         overflow-x: hidden !important;
     }
     
     .grid-container {
         grid-template-columns: 1fr !important;
         width: 100% !important;
-        max-width: 360px !important;  /* Hard limit to your phone width */
+        max-width: 344px !important;  /* 360px - 16px total padding */
         margin: 0 auto !important;
-        padding: 80px 8px 120px 8px !important;  /* Tighter side padding */
+        padding: 80px 8px 120px 8px !important;
         gap: 20px !important;
         box-sizing: border-box !important;
     }
@@ -658,7 +656,7 @@ body.enterscreen-blur .grid-container {
         width: 100% !important;
         max-width: 100% !important;
         margin: 0 !important;
-        padding: 20px 12px !important;  /* Constrained inner padding */
+        padding: 20px 10px !important;  /* Even tighter */
         box-sizing: border-box !important;
     }
 }

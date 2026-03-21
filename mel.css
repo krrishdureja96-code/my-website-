@@ -631,63 +631,56 @@ body.enterscreen-blur .grid-container {
 .txt{
     color: aliceblue;
 }
+
 @media (max-width: 400px) {
-    body {
-        height: 100vh !important;
-        overflow-y: auto !important;
-        overflow-x: hidden !important;
-        padding: 0 !important;
-        margin: 0 !important;
-        display: block !important; /* Kill flex centering */
-        background-size: cover !important;
-        background-position: center !important;
-        background-attachment: fixed !important;
+    /* Keep all previous rules, just replace this section: */
+    
+    /* About Me box internal layout - preserve relative positioning */
+    .about-me {
+        position: relative !important;
+        flex-direction: column !important;
+        gap: 15px !important;
+        padding: 20px !important;
     }
     
-    .grid-container {
-        grid-template-columns: 1fr !important; /* Single full-width column */
-        grid-template-areas: 
-            "box-1"
-            "box-2"
-            "box-3"
-            "box-4"
-            "box-5" !important;
-        width: 100vw !important;
-        max-width: 100% !important;
-        gap: 20px !important;
-        padding: 60px 12px 80px !important; /* Top space for title, bottom for icons */
-        top: 0 !important; /* Remove 40px top */
-        margin: 0 !important;
-        box-sizing: border-box !important;
-    }
-    
-    .box {
-        width: 100% !important;
-        height: auto !important; /* Content-driven height */
-        min-height: 250px !important;
-        margin: 0 !important;
-        position: relative !important; /* No absolute positioning */
-    }
-    
-    /* Fix positioned elements */
-    .bg-img, .about-me-txt, .stuff, .dot, .connections {
-        position: static !important;
+    .about-me-txt {
+        position: relative !important; /* Keep relative INSIDE box */
         bottom: 0 !important;
         left: 0 !important;
-        right: 0 !important;
+        font-size: 1.4rem !important;
+        margin: 0 !important;
+        width: 100% !important;
+        text-align: center;
+    }
+    
+    .stuff {
+        position: relative !important; /* Keep relative INSIDE box */
+        bottom: 0 !important;
+        left: 0 !important;
+        font-size: 1.1rem !important;
+        margin: 10px 0 !important;
+        width: 100% !important;
+        text-align: center;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .aboutme-img, .avatar-decoration, .dot {
+        position: relative !important;
+        bottom: 0 !important;
+        left: 0 !important;
         margin: 10px auto !important;
-        width: auto !important;
+        display: block;
     }
     
-    .connections {
-        position: fixed !important;
-        bottom: 10px !important;
-        left: 50% !important;
-        transform: translateX(-50%) !important;
-        gap: 20px !important;
-    }
-    
-    h2 {
-        font-size: 18px !important;
+    /* Ensure box has proper height */
+    .about-me .box {
+        min-height: 280px !important;
+        padding: 25px 15px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
     }
 }
+        
+        

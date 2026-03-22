@@ -641,5 +641,9 @@ body.enterscreen-blur .grid-container {
         "box-3"
         "box-4"
         "box-5";
+        margin-left: 10px;
+    }
+    body{
+        overflow-x: hidden;
     }
 }

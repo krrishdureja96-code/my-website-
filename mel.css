@@ -631,3 +631,10 @@ body.enterscreen-blur .grid-container {
 .txt{
     color: aliceblue;
 }
+@media (max-width: 768px) {
+    .grid-container{
+        grid-template-columns: 400px;
+    }
+}
+
+

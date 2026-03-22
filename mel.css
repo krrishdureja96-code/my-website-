@@ -633,7 +633,7 @@ body.enterscreen-blur .grid-container {
 }
 @media (max-width: 768px) {
     .grid-container{
-        grid-template-columns: 3fr;
+        grid-template-columns: 400px;
     }
 }
 

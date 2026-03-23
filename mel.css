@@ -713,7 +713,7 @@ body.enterscreen-blur .grid-container {
 
     .stuff{
      position: relative;
-     font-size: 0.7rem; 
+     font-size: 1rem; 
      }
 
      .bg-img{
@@ -721,7 +721,7 @@ body.enterscreen-blur .grid-container {
         left: 3.4em;
       }  
       .connections{
-        gap: 15px;
+        gap: 20px;
       }
 
 }

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-    <title> About-me</title>
+    <title> welcome to melancholys domain</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="mel.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -59,16 +59,10 @@
                 <a href="https://discordapp.com/users/792370349652049960" target="_blank" rel="noopener" class="icon-link">
                     <div class="icons"><i class="fa-brands fa-discord" style="color: rgb(255, 255, 255);"></i></div>
                 </a>
-                <a href="" target="_blank" rel="noopener" class="icon-link">
+                <a href="https://www.instagram.com/chillin_in_the_back_room/" target="_blank" rel="noopener" class="icon-link">
                     <div class="icons"><i class="fa-brands fa-instagram" style="color: rgb(255, 255, 255);"></i></div>
-                </a>    
-                <a href="" target="_blank" rel="noopener" class="icon-link">
-                    <div class="icons"><i class="fa-duotone fa-regular fa-heart" style="--fa-primary-color: rgb(255, 255, 255); --fa-secondary-color: rgb(255, 255, 255);"></i></div>
-                </a>    
-                <a href="" target="_blank" rel="noopener" class="icon-link">
-                     <div class="icons"><i class="fa-brands fa-telegram" style="color: rgb(255, 255, 255);"></i></div>
-                </a>     
-                 <a href="" target="_blank" rel="noopener" class="icon-link">
+                </a>   
+                 <a href="https://github.com/krrishdureja96-code" target="_blank" rel="noopener" class="icon-link">
                   <div class="icons"><i class="fa-brands fa-github" style="color: rgb(255, 255, 255);"></i></div>
                  </a> 
             <script>
@@ -84,6 +78,15 @@
               if (!userData.discord_user) {
                 console.error("No discord_user in response:", userData);
                 return;
+              }
+                  const activities = userData.spotify;
+              const artist = activities ? activities.artist : null;
+              const song   = activities ? activities.song : null;
+              const actEle = document.getElementById("act");
+              if (artist && song) {
+                actEle.textContent = `${song} - ${artist}`;
+              } else {
+                actEle.textContent = "No Activity";
               }
               
 
@@ -256,7 +259,7 @@ typeNextOutput();
         </div>
          <div class="box fav-shows" style="grid-area: box-4;">
             <video id="myVideo"loop autoplay playsinline>
-                <source src="213042_medium.mp4" type="video/mp4">
+                <source src="train.mp4" type="video/mp4">
 
             </video>
 <!--
@@ -295,14 +298,67 @@ typeNextOutput();
          </div>
 
      
-        <div class="box counter" style="grid-area: box-5;">
-          <div>
-            <p style="font-size: 1.5rem;">Feel Free to Connect with me!</p>
+        <div class="box act" style="grid-area: box-5;">
+            <video src="gif-ezgif.com-gif-to-mp4-converter.mp4" type="video/mp4" id="myVideo"loop autoplay playsinline></video>
+            <div class="activity" id="act"></div>
+        </div>
+        
+        <div class="box spotify" style="grid-area: box-6;">
+          <div class="track-box">
+          <div class="track-scroll" id="trackScroll">
+            <div class="track-group" id="trackGroupA"></div>
+            <div class="track-group" id="trackGroupB"></div>
           </div>
-          <div class="Discord">
-          <div class="icon"><i class="fa-brands fa-discord" style="color: rgb(255, 255, 255);"></i></div>
-          <div> <a href="https://discordapp.com/users/792370349652049960" target="_blank" rel="noopener" class="icon-link"><p class="txt">Discord</p></a></div>
+
+          <script>
+            async function loadRecentTracks() {
+  try {
+    const response = await fetch(
+      "https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=melancholy55838&api_key=ad45b0df4ea54c0597c6c74d60b79119&format=json&limit=10"
+    );
+
+    const data = await response.json();
+    const tracks = data.recenttracks?.track?.slice(0, 50) || [];
+
+    const groupA = document.getElementById("trackGroupA");
+    const groupB = document.getElementById("trackGroupB");
+
+    if (!tracks.length) {
+      const empty = "<div class='track-item'>No Activity</div>";
+      groupA.innerHTML = empty;
+      groupB.innerHTML = empty;
+      return;
+    }
+
+    const html = tracks.map((track) => {
+      const artist = track.artist?.["#text"] || "Unknown Artist";
+      const song = track.name || "Unknown Track";
+      const imageUrl =
+        track.image?.find((img) => img.size === "extralarge")?.["#text"] ||
+        track.image?.find((img) => img.size === "large")?.["#text"] ||
+        "";
+
+      return `
+        <div class="track-item">
+          <img src="${imageUrl}" alt="${song} cover">
+          <div class="track-text">
+            <div class="track-name">${song}</div>
+            <div class="track-artist">${artist}</div>
           </div>
+        </div>
+      `;
+    }).join("");
+
+    groupA.innerHTML = html;
+    groupB.innerHTML = html;
+  } catch (error) {
+    console.error("Fetch failed:", error);
+  }
+}
+
+loadRecentTracks();
+
+          </script>
         </div>
     </div>
  

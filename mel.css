@@ -527,7 +527,7 @@ font-family: sans-serif;
     }
     .bg-img{
         width: min(70em,95%);
-        left: 1.4em;
+        left: 0.85em;
     }
       .about-me-txt{
     position: relative;
@@ -677,6 +677,7 @@ font-family: sans-serif;
   pointer-events: all;
   user-select: none;
   gap: 20px;
+  
 }
 
 #enter-button {
@@ -723,19 +724,23 @@ font-family: sans-serif;
 #enter-screen.fade-out {
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease-out;
+   animation: slideOutLeft; 
+  animation-duration: 10s; 
 }
 
 body.enterscreen-blur .grid-container {
   filter: blur(4px);
   opacity: 0;
-  transition: filter 0.2s ease-out opacity 0.2s ease;
+   animation: slideOutLeft; 
+  animation-duration: 2ms; 
 }
 
 .grid-container.loaded {
   filter: none;
   opacity: 1;
-  transition: filter 0.2s ease, opacity 0.2s ease;
+  animation: slideOutLeft;
+  animation-duration: 2ms; 
 }
 
 .Discord{
@@ -802,7 +807,7 @@ body.enterscreen-blur .grid-container {
 
     .stuff{
      position: relative;
-     font-size: 0.9rem; 
+     font-size: 1rem; 
      }
 
      .bg-img{
@@ -821,5 +826,10 @@ body.enterscreen-blur .grid-container {
         width: min(40em,95%);
         left: 3.6em;
     }
+}
+
+.box{
+  animation: slideInDown; 
+  animation-duration: 3.5s; 
 }
 
